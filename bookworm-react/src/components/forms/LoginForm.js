@@ -11,9 +11,10 @@ class LoginForm extends React.Component {
     },
     loading: false,
     errors:{}
-  }
+  };
 
   onChange = e  => this.setState(
+
     {
       data:{
         ...this.state.data,[e.target.name]: e.target.value
@@ -21,22 +22,23 @@ class LoginForm extends React.Component {
     }
   );
 
-  onSubmit = () =>{
+  onSubmit = () => {
     const errors = this.validate(this.state.data);
-    this.setState({errors});
+    this.setState({ errors });
   };
 
-  validate = (data) =>{
+  validate = data =>{
     const errors = {};
     if(!Validator.isEmail(data.email)) errors.email = "Invalid email";
     if(!data.password) errors.password = "Can't be blank";
+    console.log(errors);
     return errors;
   };
 
   render(){
     const { data, errors } = this.state;
     return (
-      <Form onSubmit={this.OnSubmit}>
+      <Form onSubmit={this.onSubmit}>
         <Form.Field>
           <label  htmlFor="email">Email</label>
           <input
@@ -61,9 +63,9 @@ class LoginForm extends React.Component {
             />
         </Form.Field>
         {errors.password && <InlineError text={errors.password}/>}
-        <Button primary>Login</Button>
+        <Button primary type="submit">Login</Button>
       </Form>
     );
-  }
-}
+  };
+};
 export default LoginForm;
