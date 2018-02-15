@@ -4,12 +4,14 @@
   "private": true,
   "dependencies": {
     "nodemon": "^1.14.12",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "semantic-ui-css": "^2.2.14",
-    "semantic-ui-react": "^0.78.2"
+    "semantic-ui-react": "^0.78.2",
+    "validator": "^9.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
